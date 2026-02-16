@@ -13,10 +13,9 @@ private:
     int size;
 
 public:
-    // Constructor
+
     Queue(int cap);
 
-    // Destructor
     ~Queue();
 
     void enqueue(int value);
