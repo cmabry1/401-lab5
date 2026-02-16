@@ -1,6 +1,5 @@
 #include "Queue.hpp"
 
-// Constructor
 Queue::Queue(int cap) {
     capacity = cap;
     arr = new int[capacity];
@@ -9,12 +8,10 @@ Queue::Queue(int cap) {
     size = 0;
 }
 
-// Destructor
 Queue::~Queue() {
     delete[] arr;
 }
 
-// Add element to rear
 void Queue::enqueue(int value) {
     if (isFull()) {
         cout << "Queue is full. Cannot enqueue " << value << endl;
@@ -26,7 +23,6 @@ void Queue::enqueue(int value) {
     size++;
 }
 
-// Remove element from front
 int Queue::dequeue() {
     if (isEmpty()) {
         cout << "Queue is empty. Cannot dequeue." << endl;
@@ -39,7 +35,6 @@ int Queue::dequeue() {
     return value;
 }
 
-// Return front element
 int Queue::front() {
     if (isEmpty()) {
         cout << "Queue is empty." << endl;
@@ -49,12 +44,10 @@ int Queue::front() {
     return arr[frontIndex];
 }
 
-// Check if empty
 bool Queue::isEmpty() {
     return size == 0;
 }
 
-// Check if full
 bool Queue::isFull() {
     return size == capacity;
 }
